@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :reservations, foreign_key: :guest_id
 
   has_many :owner_reservations, through: :flats, source: :reservations
+  mount_uploader :avatar, PhotoUploader
 end
