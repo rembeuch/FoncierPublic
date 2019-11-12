@@ -1,12 +1,13 @@
 <h1>Reservations#new</h1>
 
 <div class="container">
-<%= simple_form_for(@reservation) do |f| %>
-    <%= f.date :start_date %>
-    <%= f.date :end_date %>
-    <%= f.input :photo_cache, as: :hidden %>
-  </div>
+<%= simple_form_for [@flat, @reservation] do |f| %>
+    <%= f.input :start_date, as: :date %>
+    <%= f.input :end_date, as: :date %>
+    <% f.input :end_date, as: :date %>
     <%= f.button :submit %>
-  </div>
-<% end %>
 </div>
+
+<% end %>
+
+
