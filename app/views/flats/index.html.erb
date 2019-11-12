@@ -1,9 +1,10 @@
 <h1>Flats#index</h1>
 <p>Find me in app/views/flats/index.html.erb</p>
+<h3><%= link_to 'Ajouter un bien', new_owner_flat_path %></h3>
 
 <% @flats.each do |flat| %>
 <ul>
-  <li><%= flat.title %></li>
+  <li><%= link_to flat.title, flat %></li>
   <li><%= flat.address %></li>
   <li><%= cl_image_tag flat.photo, height: 100, width: 100, crop: :fill%></li>
   <li>Proprietaire: <%= flat.owner.first_name %> <%= flat.owner.last_name %></li>
