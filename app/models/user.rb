@@ -9,4 +9,8 @@ class User < ApplicationRecord
 
   has_many :owner_reservations, through: :flats, source: :reservations
   mount_uploader :avatar, PhotoUploader
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+
 end

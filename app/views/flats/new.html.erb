@@ -1,2 +1,15 @@
 <h1>Flats#new</h1>
 <p>Find me in app/views/flats/new.html.erb</p>
+
+<form>
+  <div class="form-group">
+    <label for="formInputFlatName">Flat name</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrez le nom">
+  </div>
+  <div class="form-group">
+    <label for="formInputFlatAddress">Another label</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Entrez l'adresse">
+  </div>
+</form>
+
+<%= link_to 'Back', flats_path %>

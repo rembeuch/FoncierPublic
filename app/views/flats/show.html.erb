@@ -2,4 +2,5 @@
 <p>Find me in app/views/flats/show.html.erb</p>
 <h3><%= @flat.title %></h3>
 <%= cl_image_tag @flat.photo, height: 200, width: 300, crop: :fill%>
-<%#= link_to 'Reservation', new_flat_reservation_path %>
+<%= link_to 'Reservation', new_flat_reservation_path(@flat) %>
+<%= link_to 'Retour', flats_path %>

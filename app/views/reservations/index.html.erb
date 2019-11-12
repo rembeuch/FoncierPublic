@@ -1,0 +1,13 @@
+<h1>Reservations#index</h1>
+
+  <% @reservations.each do |reservation| %>
+  <%= reservation.flat.title %>
+  <%= reservation.flat.address %>
+  <%= reservation.price %>€
+  <%= cl_image_tag reservation.flat.photo, height: 100, width: 100, crop: :fill %>
+  <p>Du : <%= reservation.start_date %> au: <%= reservation.end_date %> </p>
+
+
+  <%= reservation.status %>
+
+  <% end %>
