@@ -1,6 +1,18 @@
-<h1>Flats#show</h1>
-<p>Find me in app/views/flats/show.html.erb</p>
-<h3><%= @flat.title %></h3>
-<%= cl_image_tag @flat.photo, height: 200, width: 300, crop: :fill%>
-<%= link_to 'Reservation', new_flat_reservation_path(@flat) %>
-<%= link_to 'Retour', flats_path %>
+<div class="container">
+  <%= link_to 'Retour', flats_path %>
+  <div class="card-trip card-trip-flat">
+    <%= cl_image_tag @flat.photo, crop: :fill%>
+    <div class="card-trip-infos card-trip-flat">
+      <div>
+        <h2><%= @flat.title %></h2>
+        <h3><%= @flat.address %></h2>
+        <p><%= @flat.description %></p>
+      </div>
+      <h2 class="card-trip-pricing"><%= @flat.price_per_day %>€</h2>
+    </div>
+  </div>
+  <%= link_to 'Reservation', new_flat_reservation_path(@flat), class: 'btn btn-success' %>
+</div>
+
+
+<!--<img src="<%#= cl_image_tag @flat.owner.avatar, crop: :fill%>" class="card-trip-user avatar-bordered" /> -->
