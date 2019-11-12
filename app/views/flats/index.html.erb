@@ -2,8 +2,10 @@
 <p>Find me in app/views/flats/index.html.erb</p>
 
 <% @flats.each do |flat| %>
-<ol>
-  <li><% flat.name %></li>
-  <li><% flat.address %></li>
-</ol>
+<ul>
+  <li><%= flat.title %></li>
+  <li><%= flat.address %></li>
+  <li><%= cl_image_tag flat.photo, height: 100, width: 100, crop: :fill%></li>
+  <li>Proprietaire: <%= flat.owner.first_name %> <%= flat.owner.last_name %></li>
+</ul>
 <% end %>
