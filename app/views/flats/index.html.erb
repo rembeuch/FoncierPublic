@@ -1,12 +1,15 @@
-<h1>Flats#index</h1>
-<p>Find me in app/views/flats/index.html.erb</p>
-<h3><%= link_to 'Ajouter un bien', new_owner_flat_path %></h3>
-
+<div class="container">
 <% @flats.each do |flat| %>
-<ul>
-  <li><%= link_to flat.title, flat %></li>
-  <li><%= flat.address %></li>
-  <li><%= cl_image_tag flat.photo, height: 100, width: 100, crop: :fill%></li>
-  <li>Proprietaire: <%= flat.owner.first_name %> <%= flat.owner.last_name %></li>
-</ul>
-<% end %>
+<div class="card-disposition">
+  <div class="card card-flats-index" style="width: 18rem;">
+   <%= cl_image_tag flat.photo, height: 200, width: 250, crop: :fill%> <%= flat.owner.first_name %> <%= flat.owner.last_name %>
+      <h5 class="card-title"><%= flat.title %></h5>
+    <div class="card-body">
+      <p class="card-text">
+      <%= link_to 'flat', flat_path(flat), class:'btn btn-primary'%>
+    </div>
+  </div>
+</div>
+  <% end %>
+
+</div>
