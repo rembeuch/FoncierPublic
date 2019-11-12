@@ -5,9 +5,9 @@ url_flat = "https://res.cloudinary.com/cbosseman/image/upload/v1573219418/bb9c0a
 url_avatar = "https://res.cloudinary.com/cbosseman/image/upload/v1573492633/52eabf633ca6414e60a7677b0b917d92-male-avatar-maker_fnq3vb.jpg"
 
 puts "Destroy all instances"
-User.destroy_all if Rails.env.development?
-Flat.destroy_all if Rails.env.development?
 Reservation.destroy_all if Rails.env.development?
+Flat.destroy_all if Rails.env.development?
+User.destroy_all if Rails.env.development?
 
 
 puts "Create users"
@@ -19,7 +19,7 @@ puts "Create users"
     password: Faker::Internet.password,
     description: Faker::Lorem.paragraph,
     )
-  # user.remote_avatar_url = url_avatar
+  user.remote_avatar_url = url_avatar
   user.save
 end
 
@@ -31,20 +31,20 @@ end
     price_per_day: Faker::Number.between(from: 20, to: 300),
     owner: User.all.sample
     )
-  # flat.remote_photo_url = url_flat
+  flat.remote_photo_url = url_flat
   flat.save
 end
 
-# 20.times do
-#   Reservation.create(
-#     start_date: Date.today,
-#     end_date: Faker::Date.between(from: Date.today, to: 1.year.from_now),
-#     status: status.sample,
-#     price: Faker::Number.between(from: 20, to: 300),
-#     flat_id: Faker::Number.between(from: 0, to: 20),
-#     guest_id: Faker::Number.between(from: 0, to: 20)
-#     )
-# end
+20.times do
+  Reservation.create(
+    start_date: Date.today,
+    end_date: Faker::Date.between(from: Date.today, to: 1.year.from_now),
+    status: status.sample,
+    price: Faker::Number.between(from: 20, to: 300),
+    flat: Flat.all.sample,
+    guest: User.all.sample
+    )
+end
 
 
 
