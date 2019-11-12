@@ -25,8 +25,8 @@ end
 
 10.times do
   flat = Flat.new(
-    title: Faker::Nation.capital_city,
-    address: Faker::Address.street_address,
+    title:  Faker::Book.title,
+    address: Faker::Address.full_address,
     description: Faker::Lorem.paragraph,
     price_per_day: Faker::Number.between(from: 10, to: 300),
     owner: User.all.sample
