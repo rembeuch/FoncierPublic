@@ -1,0 +1,9 @@
+<h1>Reservations#index</h1>
+<p>Find me in app/views/reservations/index.html.erb</p>
+  <% @reservations.each do |reservation| %>
+  <%= reservation.flat.title %>
+  <%= reservation.flat.address %>
+  <%= cl_image_tag reservation.flat.photo, height: 100, width: 100, crop: :fill %>
+  <%= reservation.status %>
+
+  <% end %>
