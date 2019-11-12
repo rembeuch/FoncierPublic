@@ -3,4 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_many :flats, foreign_key: :owner_id
+  has_many :reservations, foreign_key: :guest_id
+
+  has_many :owner_reservations, through: :flats, source: :reservations
+  mount_uploader :avatar, PhotoUploader
 end
