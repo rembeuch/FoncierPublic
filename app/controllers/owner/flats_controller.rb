@@ -8,6 +8,7 @@ class Owner::FlatsController < ApplicationController
   end
 
   def create
+    @flat = Flat.new(flat_params)
 
   end
 end
