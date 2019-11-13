@@ -60,10 +60,32 @@ flat4 = Flat.new(
   )
 flat4.photo = File.open(Rails.root.join("db/fixtures/flats/fourth_flat_image.jpg"))
 
+flat5 = Flat.new(
+  title:  "Chambre des métiers",
+  address: "2, cours des alliés, 35000 Rennes",
+  description: "La chambre des métiers met à votre disposition l'Espace conférence Georges Brand d'une capacité de 230 places assises. Cette salle est réservée pour toutes utilisations, sauf culturelles. Elle est équipée de : Sièges, tables, vidéoprojecteur,
+sono, écran, micro HF, microcravate",
+  price_per_day: 200,
+  owner: User.all.sample
+  )
+flat5.photo = File.open(Rails.root.join("db/fixtures/flats/five_flat_image.jpg"))
+
+flat6 = Flat.new(
+  title:  "Maison des Associations",
+  address: "6 Cours des Alliés, 35000 Rennes",
+  description: "La chambre des métiers met à votre disposition l'Espace conférence Georges Brand d'une capacité de 230 places assises. Cette salle est réservée pour toutes utilisations, sauf culturelles. Elle est équipée de : Sièges, tables, vidéoprojecteur,
+sono, écran, micro HF, microcravate",
+  price_per_day: 90,
+  owner: User.all.sample
+  )
+flat6.photo = File.open(Rails.root.join("db/fixtures/flats/six_flat_image.jpg"))
+
 flat1.save
 flat2.save
 flat3.save
 flat4.save
+flat5.save
+flat6.save
 
 puts "Create reservations"
 default_user = User.new(
@@ -81,6 +103,6 @@ Reservation.create(
   end_date: Faker::Date.between(from: Date.today, to: 1.year.from_now),
   status: "Refusé",
   price: 300,
-  flat: Flat.last,
+  flat: flat4,
   guest: default_user
   )
