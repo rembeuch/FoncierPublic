@@ -1,11 +1,10 @@
-<h1>Reservations#new</h1>
-
 <div class="container">
-<%= simple_form_for [@flat, @reservation] do |f| %>
-    <%= f.input :start_date, as: :date %>
-    <%= f.input :end_date, as: :date %>
-    <% f.input :end_date, as: :date %>
-    <%= f.button :submit %>
+<h1>Je choisi mes dates :</h1>
+  <%= simple_form_for [@flat, @reservation] do |f| %>
+      <%= f.input :start_date, as: :date %>
+      <%= f.input :end_date, as: :date %>
+      <% f.input :end_date, as: :date %>
+      <%= f.button :submit %>
 </div>
 
 <% end %>
