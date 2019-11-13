@@ -39,6 +39,23 @@
 }
 
 // CUSTOM CSS
+.container  {
+  display: grid;
+}
+
+.card {
+  display: flex;
+  width: 320px;
+  height: 340px;
+  padding: 10px;
+  margin-bottom: 20px;
+  align-items: space-around;
+}
+
+.card-trip-flat {
+  margin-bottom: 15px;
+  padding-bottom: 20px;
+}
 
 .card-trip-flat > img {
   height: 400px;
@@ -56,3 +73,12 @@
   font-size: 16px;
   margin: 5;
 }
+.card-title {
+  padding-top: 10px;
+  text-align: center;
+  height: 35px;
+}
+.card-body {
+  text-align: center;
+}
+

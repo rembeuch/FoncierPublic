@@ -1,5 +1,5 @@
 <div class="container">
-  <%= link_to 'Retour', flats_path, class: 'btn btn-primary' %>
+  <%= link_to 'Retour', flats_path, class: 'btn btn-primary btn-primary-flat-show' %>
   <div class="card-trip card-trip-flat">
     <%= cl_image_tag @flat.photo, crop: :fill%>
     <div class="card-trip-infos card-trip-flat">
@@ -10,16 +10,20 @@
       </div>
       <h2 class="card-trip-pricing"><%= @flat.price_per_day %>€</h2>
     </div>
+    <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+      <h2>Je choisi mes dates :</h2>
 
-<div class="container">
-<h1>Je choisi mes dates :</h1>
-  <%= simple_form_for [@flat, @reservation] do |f| %>
-      <%= f.input :start_date, as: :date %>
-      <%= f.input :end_date, as: :date %>
-      <%= f.button :submit %>
+      <%= simple_form_for [@flat, @reservation] do |f| %>
+        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.button :submit, "Validez", class: "btn btn-primary btn-primary-flat" %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
-<% end %>
+
+
 
 
 <!--<img src="<%#= cl_image_tag @flat.owner.avatar, crop: :fill%>" class="card-trip-user avatar-bordered" /> -->

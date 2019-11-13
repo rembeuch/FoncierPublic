@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :reservations, only: [:new, :create]
   end
 
+  resources :reservations, only: [:index]
+
   namespace :owner do
     resources :flats, only: [:index, :new, :create]
     resources :reservations, only: [:index] do
@@ -15,6 +17,4 @@ Rails.application.routes.draw do
       end
     end
   end
-
-  resources :reservations, only: [:index]
 end
