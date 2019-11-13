@@ -1,13 +1,16 @@
-<h1>Reservations#index</h1>
-
+<div class="container">
   <% @reservations.each do |reservation| %>
-  <%= reservation.flat.title %>
-  <%= reservation.flat.address %>
-  <%= reservation.price %>€
+
+<div class="card-product">
   <%= cl_image_tag reservation.flat.photo, height: 100, width: 100, crop: :fill %>
-  <p>Du : <%= reservation.start_date %> au: <%= reservation.end_date %> </p>
-
-
+  <div class="card-product-infos">
+  <h2>Du : <%= reservation.start_date %> au: <%= reservation.end_date %> </h2>
+    <h2> <%= reservation.flat.title %></h2>
+    <p> <%= reservation.flat.address %></p>
+    <h2><%= reservation.price %>€</h2>
+  </div>
   <%= reservation.status %>
+</div>
 
   <% end %>
+</div>
