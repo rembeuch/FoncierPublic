@@ -1,5 +1,5 @@
 <div class="container">
-  <%= link_to 'Retour', flats_path, class: 'btn btn-primary' %>
+  <%= link_to 'Retour', flats_path, class: 'btn btn-primary btn-primary-flat-show' %>
   <div class="card-trip card-trip-flat">
     <%= cl_image_tag @flat.photo, crop: :fill%>
     <div class="card-trip-infos card-trip-flat">
@@ -16,7 +16,7 @@
   <%= simple_form_for [@flat, @reservation] do |f| %>
       <%= f.input :start_date, as: :date %>
       <%= f.input :end_date, as: :date %>
-      <%= f.button :submit, class: 'btn btn-primary' %>
+      <%= f.button :submit, class: 'btn btn-primary btn-primary-flat' %>
 </div>
 
 <% end %>
