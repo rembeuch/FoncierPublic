@@ -1,0 +1,65 @@
+.container  {
+  display: grid;
+}
+
+.card {
+  display: flex;
+  width: 320px;
+  height: 340px;
+  padding: 10px;
+  margin-bottom: 20px;
+  align-items: space-around;
+}
+
+.card-trip-flat > img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip-flat h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 5;
+}
+
+.card-trip h3 {
+  font-size: 16px;
+  margin: 5;
+}
+.card-title {
+  padding-top: 10px;
+  text-align: center;
+  height: 35px;
+}
+.card-body {
+  text-align: center;
+}
+.card-flats-index{
+display: flex;
+justify-content: center;
+align-items: center;
+padding-top: 15px;
+box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-disposition{
+display: inline-table;
+  width: 100px;
+  height: 100px;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
