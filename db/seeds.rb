@@ -10,7 +10,7 @@ User.destroy_all if Rails.env.development?
 
 
 puts "Create users"
-10.times do
+5.times do
   user = User.new(
     first_name: Faker::Name.unique.first_name,
     last_name: Faker::Name.unique.last_name,
@@ -22,15 +22,6 @@ puts "Create users"
   user.save
 end
 
-  default_user = User.new(
-    first_name: "Laszlo",
-    last_name: "van daal",
-    email: "laszlo@example.com",
-    password: "password",
-    description: "Président d'une legalTech je cherche frequemment des salles pour organiser des conférences",
-    )
-  default_user.remote_avatar_url = url_avatar
-  default_user.save
 
 puts "Create flats"
 flat1 = Flat.new(
@@ -75,16 +66,15 @@ flat3.save
 flat4.save
 
 puts "Create reservations"
-10.times do
-  Reservation.create(
-    start_date: Date.today,
-    end_date: Faker::Date.between(from: Date.today, to: 1.year.from_now),
-    status: status.sample,
-    price: Faker::Number.between(from: 10, to: 300),
-    flat: Flat.all.sample,
-    guest: User.all.sample
-    )
-end
+default_user = User.new(
+  first_name: "Laszlo",
+  last_name: "van daal",
+  email: "laszlo@example.com",
+  password: "password",
+  description: "Président d'une legalTech je cherche frequemment des salles pour organiser des conférences",
+  )
+default_user.remote_avatar_url = url_avatar
+default_user.save
 
 Reservation.create(
   start_date: Date.today,
