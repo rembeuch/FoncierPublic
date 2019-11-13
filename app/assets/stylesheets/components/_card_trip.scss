@@ -76,3 +76,31 @@
 .card-body {
   text-align: center;
 }
+.card-flats-index{
+display: flex;
+justify-content: center;
+align-items: center;
+padding-top: 15px;
+box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-disposition{
+display: inline-table;
+  width: 100px;
+  height: 100px;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
