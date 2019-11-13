@@ -6,12 +6,24 @@
   width: 56px;
   border-radius: 50%;
 }
+
 .avatar-bordered {
-  width: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
+  margin-left: 20px;
+  margin-right: 10px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+   // color: rgb(98, 212, 210)
+   opacity: 1;
+  }
 }
+
 .avatar-square {
   width: 40px;
   border-radius: 0px;
