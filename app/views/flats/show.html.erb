@@ -16,7 +16,7 @@
   <%= simple_form_for [@flat, @reservation] do |f| %>
       <%= f.input :start_date, as: :date %>
       <%= f.input :end_date, as: :date %>
-      <%= f.button :submit %>
+      <%= f.button :submit, class: 'btn btn-primary' %>
 </div>
 
 <% end %>
