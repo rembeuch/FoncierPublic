@@ -5,6 +5,7 @@ class FlatsController < ApplicationController
   end
 
   def show
+    @reservation = Reservation.new
     @flat = Flat.find(params[:id])
   end
 
