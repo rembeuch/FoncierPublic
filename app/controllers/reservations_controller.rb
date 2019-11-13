@@ -14,7 +14,7 @@ class ReservationsController < ApplicationController
 
     if @reservation.price >= 0 && @reservation.start_date >= Date.today && @reservation.save
       redirect_to flat_path(@flat)
-      flash[:notice] = "Succesfully booked !"
+      flash[:notice] = "Demande de réservation envoyée"
     else
       render :new
       flash[:alert] = "Something went wrong..."

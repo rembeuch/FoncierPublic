@@ -1,5 +1,5 @@
 class Owner::ReservationsController < ApplicationController
   def index
-    @reservations = current_user.reservations
+    @reservations = Reservation.joins(:flat).where(flats: { owner: current_user })
   end
 end
