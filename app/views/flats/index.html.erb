@@ -5,11 +5,14 @@
       <div class="col-xl-4 col-md-6 col-12">
         <div class="card card-border card-shadow">
           <%= cl_image_tag flat.photo, height: 200, width: 300, crop: :fill%>
-          <h5 class="card-title"><%= flat.title %></h5>
+          <h5 class="card-newtitle"><%= flat.title %></h5>
           <div class="card-body">
-            <!-- <p class="card-text">...</p> -->
-           <%= link_to 'Détails', flat_path(flat), class:'btn btn-ghost'%>
-         </div>
+            <div class="card-button-price">
+              <!-- <p class="card-text">...</p> -->
+              <%= link_to 'Détails', flat_path(flat), class: 'btn btn-ghost btn-ghost-index'%>
+              <h2 class="card-trip-pricing"><%= flat.price_per_day %></h2><span class="periode"> € / jour</span>
+            </div>
+          </div>
         </div>
       </div>
     <% end %>
