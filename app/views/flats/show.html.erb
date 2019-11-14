@@ -9,11 +9,14 @@
       <div>
         <h2><%= @flat.title %></h2>
         <h3><i class="fas fa-map-marker-alt"></i> <%= @flat.address %></h2>
+        <h3><%= @flat.square_meter %>m2 - <%= @flat.capacity %>/pers</h3>
         <p><%= @flat.description %></p>
       </div>
       <h2 class="card-trip-pricing"><%= @flat.price_per_day %>€ / jour</h2>
     </div>
     <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+      <% if @flat.owner == current_user %>
+      <% else %>
       <h2>Je choisi mes dates :</h2>
       <br>
       <%= simple_form_for [@flat, @reservation] do |f| %>
