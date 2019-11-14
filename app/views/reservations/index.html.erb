@@ -1,7 +1,7 @@
 <div class="container">
   <% @reservations.each do |reservation| %>
 
-<div class="card-product">
+<div class="card-product card-border card-shadow">
   <%= cl_image_tag reservation.flat.photo, height: 100, width: 100, crop: :fill %>
   <div class="card-product-infos">
   <h2>Du : <%= reservation.start_date %> au: <%= reservation.end_date %> </h2>
