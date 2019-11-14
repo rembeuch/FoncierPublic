@@ -1,4 +1,12 @@
 <div class="container">
+    <h1 class="h1_home">Mes réservations</h1>
+   <br>
+<div>
+ <%= link_to flats_path, class: 'btn btn-ghost guest-flats-btn btn-border-blue' do %>
+   <i class="fas fa-search"></i>
+   <span>Nouvelle Recherche</span>
+   <% end %>  </div>
+
   <% @reservations.each do |reservation| %>
 
 <div class="card-product card-border card-shadow">
