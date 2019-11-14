@@ -16,7 +16,7 @@
       <%= simple_form_for [@flat, @reservation] do |f| %>
         <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
         <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.button :submit, "Validez", class: "btn btn-primary btn-primary-flat" %>
+        <%= f.button :submit, "Valider", class: "btn btn-primary btn-primary-flat" %>
       <% end %>
     </div>
   </div>
