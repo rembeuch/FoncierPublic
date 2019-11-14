@@ -46,6 +46,7 @@
 }
 
 .card {
+  position: relative;
   display: flex;
   width: 320px;
   height: 340px;
@@ -67,9 +68,9 @@
 }
 
 .card-trip-flat h2 {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
-  margin-bottom: 15px;
+  // margin-bottom: 15px;s
 }
 
 .card-trip h3 {
@@ -84,6 +85,10 @@
 //   height: 35px;
 // }
 .card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   text-align: center;
 }
 h2.card-trip-pricing  {
@@ -91,8 +96,12 @@ h2.card-trip-pricing  {
   color: #555555;
   font-weight: 300;
   padding-left: 50px;
-  margin-right: 100px;
-  margin-bottom: 70px;
+  display: inline-block;
+
+  &.show-version {
+    margin-right: 100px;
+    margin-bottom: 70px;
+  }
 }
 .card-border  {
   border-radius: 5px;
@@ -109,6 +118,7 @@ h2.card-trip-pricing  {
   text-align: center;
   color: #454545;
   padding-top: 10px;
+  height: 35px;
 }
 span.periode {
   font-size: 12px;
