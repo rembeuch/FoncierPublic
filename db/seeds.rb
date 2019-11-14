@@ -29,6 +29,8 @@ flat1 = Flat.new(
     address: " 20 Place Sainte-Anne, 35000 Rennes",
     description: "Le Couvent des Jacobins, c'est : Un Grand Auditorium pour accueillir jusqu'à 1 200 personnes, jusqu'à 400 personnes dans l'Auditorium patrimonial, une salle plane pour 500 personnes, 25 salles de commissions de 40 à 400 places chacunes, 4 000 m2 d'exposition, jusqu'à 1 500 personnes en dîner assis et 3 000 personnes en cocktail",
     price_per_day: 400,
+    capacity: 1200,
+    square_meter: 4000,
     owner: User.all.sample
     )
   flat1.photo = File.open(Rails.root.join("db/fixtures/flats/first_flat_image.jpg"))
@@ -37,16 +39,19 @@ flat2 = Flat.new(
   title:  "College public Anne de Bretagne",
   address: "15 Rue Martenot, 35000 Rennes",
   description: "Le college public Anne de Bretagne, idéalement situé au coeur de rennes, met à votre disposition une salle de classe avec une capacité de 30 élèves et un appartement de fonction de 55m2",
-  price_per_day: 100,
+  price_per_day: 80,
+  capacity: 30,
+  square_meter: 55,
   owner: User.all.sample
   )
 flat2.photo = File.open(Rails.root.join("db/fixtures/flats/second_flat_image.jpg"))
 
 flat3 = Flat.new(
-  title:  "Terrain non arboré 8000m2",
+  title:  "Terrain nu 8000m2",
   address: "51 Rue du Scorff, 35700 Rennes",
   description: "Ce terrain de 8000m2 facile d'accés via la rocade peut vous permettre de stocker vos marchandises.",
   price_per_day: 150,
+  square_meter: 8000,
   owner: User.all.sample
   )
 flat3.photo = File.open(Rails.root.join("db/fixtures/flats/third_flat_image.jpg"))
@@ -55,7 +60,9 @@ flat4 = Flat.new(
   title:  "Salle Municipale de la Cité",
   address: "10 Rue Saint-Louis, 35000 Rennes",
   description: "Salle Municipale de la Cité vous souhaite la bienvenue. Salle Municipale de la Cité est le lieu idéal pour organiser banquets, séminaires, repas d'affaires, réunions... Capacité totale de 850pers pour un cocktail, 300pers pour réunion/conférence.",
-  price_per_day: 150,
+  price_per_day: 250,
+  capacity: 850,
+  square_meter: 1000,
   owner: User.all.sample
   )
 flat4.photo = File.open(Rails.root.join("db/fixtures/flats/fourth_flat_image.jpg"))
@@ -65,18 +72,31 @@ flat5 = Flat.new(
   address: "2, cours des alliés, 35000 Rennes",
   description: "La chambre des métiers met à votre disposition l'Espace conférence Georges Brand d'une capacité de 230 places assises. Cette salle est réservée pour toutes utilisations, sauf culturelles. Elle est équipée de : Sièges, tables, vidéoprojecteur,
 sono, écran, micro HF, microcravate",
-  price_per_day: 200,
+  price_per_day: 150,
+  capacity: 230,
+  square_meter: 400,
   owner: User.all.sample
   )
 flat5.photo = File.open(Rails.root.join("db/fixtures/flats/five_flat_image.jpg"))
 
+owner_user = User.new(
+  first_name: "Corentin",
+  last_name: "Bosseman",
+  email: "corentin@example.com",
+  password: "password",
+  description: "Je suis votre contact privilégié pour toutes questions relatives à la location de salle appartenant à la maison des associations !",
+  )
+owner_user.remote_avatar_url = url_avatar
+owner_user.save
+
 flat6 = Flat.new(
   title:  "Maison des Associations",
   address: "6 Cours des Alliés, 35000 Rennes",
-  description: "La chambre des métiers met à votre disposition l'Espace conférence Georges Brand d'une capacité de 230 places assises. Cette salle est réservée pour toutes utilisations, sauf culturelles. Elle est équipée de : Sièges, tables, vidéoprojecteur,
-sono, écran, micro HF, microcravate",
-  price_per_day: 90,
-  owner: User.all.sample
+  description: "La Maison des Associations vous accueille à Rennes pour vos locations de salles et activités permanentes ou ponctuelles : cours, réunions, sessions de recrutement, colloques, conférences, assemblées générales, ateliers, …",
+  price_per_day: 170,
+  capacity: 250,
+  square_meter: 500,
+  owner: owner_user
   )
 flat6.photo = File.open(Rails.root.join("db/fixtures/flats/six_flat_image.jpg"))
 
@@ -106,3 +126,5 @@ Reservation.create(
   flat: flat4,
   guest: default_user
   )
+
+
