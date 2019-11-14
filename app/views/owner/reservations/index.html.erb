@@ -9,8 +9,10 @@
     <p> <%= reservation.flat.address %></p>
     <h2><%= reservation.price %>€</h2>
   </div>
-  <%= reservation.status %>
-</div>
+  <%= reservation.status  %>
 
+  <%= link_to "Valider", accept_owner_reservation_path(reservation), method: :patch, class: 'btn btn-success' %>
+  <%= link_to "Refuser", decline_owner_reservation_path(reservation), method: :patch, class: 'btn btn-danger' %>
+  </div>
   <% end %>
 </div>
