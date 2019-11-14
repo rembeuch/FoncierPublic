@@ -7,11 +7,16 @@
   opacity: 0.7;
   transition: opacity 0.3s ease;
   justify-content: space-around;
+
+  &:hover {
+    opacity: 1;
+  }
+  &.btn-hover-green:hover {
+    color: rgb(0,255,0);
+    border-color: rgb(0,255,0);
+  }
 }
 
-.btn-ghost:hover {
-  opacity: 1;
-}
 
 .btn-border-blue {
   border: 1px solid rgb(98, 212, 210);
@@ -30,6 +35,7 @@
     color: rgb(255, 101, 132)
   }
 }
+
 
 .btn-flat {
   color: white;
@@ -63,6 +69,20 @@
   width: 120px;
   margin-bottom: 15px;
 }
-.btn-ghost-index  {
-  font-weight: lighter;
+
+.btn-light-ghost {
+  color: #333533;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: light;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  justify-content: space-around;
+
+  &:hover {
+    opacity: 1;
+  }
 }
+
+
+
