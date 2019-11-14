@@ -4,7 +4,7 @@
 <div class="card-product card-border card-shadow">
   <%= cl_image_tag reservation.flat.photo, height: 100, width: 100, crop: :fill %>
   <div class="card-product-infos">
-  <h2>Du : <%= reservation.start_date %> au: <%= reservation.end_date %> </h2>
+  <h2>Du : <%= reservation.start_date.strftime("%d-%m-%y") %> au: <%= reservation.end_date.strftime("%d-%m-%y") %> </h2>
     <h2> <%= reservation.flat.title %></h2>
     <p> <%= reservation.flat.address %></p>
     <h2><%= reservation.price %>€</h2>
