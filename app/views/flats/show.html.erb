@@ -6,12 +6,14 @@
       <div>
         <h2><%= @flat.title %></h2>
         <h3><%= @flat.address %></h2>
+        <h3><%= @flat.square_meter %>m2 - <%= @flat.capacity %>/pers</h3>
         <p><%= @flat.description %></p>
       </div>
       <h2 class="card-trip-pricing"><%= @flat.price_per_day %>€</h2>
     </div>
     <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-      <% if @flat.owner =! current_user %>
+      <% if @flat.owner == current_user %>
+      <% else %>
       <h2>Je choisi mes dates :</h2>
         <%= simple_form_for [@flat, @reservation] do |f| %>
           <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
