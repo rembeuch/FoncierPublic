@@ -19,7 +19,7 @@ class ReservationsController < ApplicationController
       redirect_to flat_path(@flat)
       flash[:notice] = "Demande de réservation envoyée"
     else
-      render :new
+      redirect_to flat_path(@flat)
       flash[:alert] = "Something went wrong..."
     end
   end
