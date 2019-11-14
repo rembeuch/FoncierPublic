@@ -1,7 +1,24 @@
-<%= simple_form_for @flat do |f| %>
+<div class="container">
+<div class="row">
+<div class="col-sm-4 col-sm-offset-4">
+
+  <div class="form-inputs">
+
+
+
+<%= simple_form_for [:owner, @flat] do |f| %>
   <%= f.input :title %>
   <%= f.input :address %>
+  <%= f.input :description %>
   <%= f.input :price_per_day %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
 
-  <%= f.button :submit %>
+  <%= f.button :submit, "Validez", class: "btn btn-primary btn-primary-flat" %>
 <% end %>
+
+ </div>
+
+    </div>
+  </div>
+</div>
