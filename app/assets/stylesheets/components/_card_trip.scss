@@ -46,6 +46,7 @@
 }
 
 .card {
+  position: relative;
   display: flex;
   width: 320px;
   height: 340px;
@@ -84,6 +85,10 @@
 //   height: 35px;
 // }
 .card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   text-align: center;
 }
 h2.card-trip-pricing  {
@@ -113,6 +118,7 @@ h2.card-trip-pricing  {
   text-align: center;
   color: #454545;
   padding-top: 10px;
+  height: 35px;
 }
 span.periode {
   font-size: 12px;
