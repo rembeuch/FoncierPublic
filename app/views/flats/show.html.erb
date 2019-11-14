@@ -12,7 +12,7 @@
         <h3><%= @flat.square_meter %>m2 - <%= @flat.capacity %>/pers</h3>
         <p><%= @flat.description %></p>
       </div>
-      <h2 class="card-trip-pricing"><%= @flat.price_per_day %>€ / jour</h2>
+      <h2 class="card-trip-pricing show-version"><%= @flat.price_per_day %><span class="periode"> € / jour</span></h2>
     </div>
     <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
       <% unless @flat.owner == current_user %>
