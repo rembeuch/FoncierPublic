@@ -14,6 +14,7 @@ class ReservationsController < ApplicationController
 
     if @flat.owner == current_user
       flash[:notice] = "c'est votre appartement"
+      redirect_to flats_path
     elsif @reservation.price >= 0 && @reservation.start_date >= Date.today && @reservation.save
       redirect_to flat_path(@flat)
       flash[:notice] = "Demande de réservation envoyée"
