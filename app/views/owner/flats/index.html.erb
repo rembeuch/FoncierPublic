@@ -1,4 +1,6 @@
+
 <div class="container">
+  <%= link_to 'Mes réservations', owner_reservations_path, class: 'btn btn-primary btn-primary-owner-reservations' %>
   <div class="row">
     <% @flats.each do |flat| %>
       <div class="col-xl-4 col-md-6 col-12">
