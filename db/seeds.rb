@@ -1,5 +1,6 @@
 require 'faker'
 require 'open-uri'
+
 status = ['Accepté', 'Refusé', 'En attente' ]
 url_avatar = "https://res.cloudinary.com/cbosseman/image/upload/v1573492633/52eabf633ca6414e60a7677b0b917d92-male-avatar-maker_fnq3vb.jpg"
 
@@ -136,7 +137,7 @@ Reservation.create(
   status: "en attente",
   flat: flat6,
   guest: default_user,
-  price: 600
+  price: 400
   )
 
 Reservation.create(
@@ -145,5 +146,5 @@ Reservation.create(
   status: "en attente",
   flat: flat2,
   guest: owner_user,
-  price: 100
+  price: 400
   )
