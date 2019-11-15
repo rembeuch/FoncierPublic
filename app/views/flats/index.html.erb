@@ -2,19 +2,22 @@
 <div class="container">
   <div class="row">
     <% @flats.each do |flat| %>
-      <div class="col-xl-4 col-md-6 col-12">
-        <div class="card card-border card-shadow">
-          <%= cl_image_tag flat.photo, height: 200, width: 300, crop: :fill%>
-          <h5 class="card-newtitle"><%= truncate flat.title, length: 60 %></h5>
-          <div class="card-body">
-            <div class="card-button-price">
-              <!-- <p class="card-text">...</p> -->
-              <%= link_to 'Détails', flat_path(flat), class: 'btn btn-ghost btn-ghost-index'%>
-              <h2 class="card-trip-pricing"><%= flat.price_per_day %></h2><span class="periode"> € / jour</span>
+      <%= link_to flat_path(flat) do %>
+        <div class="col-xl-4 col-md-6 col-12">
+          <div class="card card-border card-shadow">
+            <%= cl_image_tag flat.photo, height: 200, width: 300, crop: :fill%>
+            <h5 class="card-newtitle"><%= truncate flat.title, length: 25 %></h5>
+            <div class="card-body">
+              <div class="card-button-price">
+                <!-- <p class="card-text">...</p> -->
+                <h2 class="card-trip-pricing"><%= flat.capacity %><span class="periode">pers</span> <i class="fas fa-user"></i> <%= flat.square_meter %></h2><span class="periode">m2</span>
+                <br>
+                <h2 class="card-trip-pricing"><%= flat.price_per_day %></h2><span class="periode"> € / jour</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
   <div
