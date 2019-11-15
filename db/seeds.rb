@@ -52,6 +52,8 @@ flat3 = Flat.new(
   description: "Ce terrain de 8000m2 facile d'accés via la rocade peut vous permettre de stocker vos marchandises.",
   price_per_day: 150,
   square_meter: 8000,
+  capacity: 130,
+
   owner: User.all.sample
   )
 flat3.photo = File.open(Rails.root.join("db/fixtures/flats/third_flat_image.jpg"))
