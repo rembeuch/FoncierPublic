@@ -1,4 +1,6 @@
 <div class="container">
+  <h1 class="h1-red">Les réservations sur vos biens</h1>
+  <br>
   <% @reservations.each do |reservation| %>
 
 <div class="card-product">
@@ -13,8 +15,8 @@
   </div>
   <%= reservation.status  %>
 
-  <%= link_to "Valider", accept_owner_reservation_path(reservation), method: :patch, class: 'btn btn-success' %>
-  <%= link_to "Refuser", decline_owner_reservation_path(reservation), method: :patch, class: 'btn btn-danger' %>
+  <%= link_to "Valider", accept_owner_reservation_path(reservation), method: :patch, class: "btn btn-ghost btn-border-blue float-md-right"%>
+  <%= link_to "Refuser", decline_owner_reservation_path(reservation), method: :patch, class: "btn btn-ghost btn-border-red float-md-left" %>
   </div>
   <% end %>
 </div>

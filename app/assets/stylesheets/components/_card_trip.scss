@@ -55,6 +55,7 @@
   align-items: space-around;
 }
 
+
 .card-trip-flat {
   margin-bottom: 15px;
   padding-bottom: 20px;
@@ -104,6 +105,7 @@ h2.card-trip-pricing  {
   }
 }
 .card-border  {
+  border: 1px solid #454545;
   border-radius: 5px;
   border-color: #eeeeee;
 }
@@ -123,4 +125,25 @@ h2.card-trip-pricing  {
 span.periode {
   font-size: 12px;
   color: #888888;
+}
+.periode {
+  font-size: 12px;
+  color: #888888;
+  letter-spacing: 2px;
+}
+.date-style {
+  color: #454545;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin: 0 10px;
+}
+.text-align-left  {
+  text-align: left;
+}
+.title-color  {
+  color: #454545;
+}
+.price-pad-top {
+  padding-top: 15px;
 }

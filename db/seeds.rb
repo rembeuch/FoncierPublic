@@ -52,6 +52,8 @@ flat3 = Flat.new(
   description: "Ce terrain de 8000m2 facile d'accés via la rocade peut vous permettre de stocker vos marchandises.",
   price_per_day: 150,
   square_meter: 8000,
+  capacity: 130,
+
   owner: User.all.sample
   )
 flat3.photo = File.open(Rails.root.join("db/fixtures/flats/third_flat_image.jpg"))
@@ -122,9 +124,26 @@ Reservation.create(
   start_date: Date.today,
   end_date: Faker::Date.between(from: Date.today, to: 1.year.from_now),
   status: "Refusé",
-  price: 300,
   flat: flat4,
+  price: 300,
   guest: default_user
   )
 
 
+Reservation.create(
+  start_date: Date.today,
+  end_date: Faker::Date.between(from: Date.today, to: 1.year.from_now),
+  status: "en attente",
+  flat: flat6,
+  guest: default_user,
+  price: 600
+  )
+
+Reservation.create(
+  start_date: Date.today,
+  end_date: Faker::Date.between(from: Date.today, to: 1.year.from_now),
+  status: "en attente",
+  flat: flat2,
+  guest: owner_user,
+  price: 100
+  )
