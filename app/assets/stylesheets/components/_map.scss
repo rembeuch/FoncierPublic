@@ -1,3 +1,9 @@
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 80px;
+}
+
 .mapboxgl-popup {
   max-width: 200px;
 }
