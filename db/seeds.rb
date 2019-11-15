@@ -131,20 +131,25 @@ Reservation.create(
   )
 
 
-Reservation.create(
+resa1 = Reservation.new(
   start_date: Date.today,
   end_date: Faker::Date.between(from: Date.today, to: 1.year.from_now),
   status: "en attente",
   flat: flat6,
   guest: default_user,
-  price: 400
   )
 
-Reservation.create(
+resa1.set_total_price!
+resa1.save!
+
+resa = Reservation.new(
   start_date: Date.today,
-  end_date: Faker::Date.between(from: Date.today, to: 1.year.from_now),
+  end_date: Faker::Date.between(from: Date.today + 1.days, to: 1.month.from_now),
   status: "en attente",
   flat: flat2,
-  guest: owner_user,
-  price: 400
+  guest: owner_user
   )
+
+resa.set_total_price!
+resa.save!
+
