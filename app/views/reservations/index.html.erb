@@ -10,15 +10,15 @@
 
   <% @reservations.each do |reservation| %>
 
-<div class="card-product card-border card-shadow align-right">
+<div class="card-product card-border card-shadow">
   <%= cl_image_tag reservation.flat.photo, height: 100, width: 100, crop: :fill %>
-  <div class="card-product-infos flex-styling">
+  <div class="card-product-infos flex-styling-long">
     <h2 class="title-color"> <%= reservation.flat.title %></h2>
     <p> <%= reservation.flat.address %></p>
     <h2 class="title-color price-pad-top"><%= reservation.price %>€</h2>
   </div>
   <p class="periode">Du<span class="date-style"><%= reservation.start_date.strftime("%d-%m-%y") %></span>  au  <span class="date-style"><%= reservation.end_date.strftime("%d-%m-%y") %></span> </p>
-  <h5><%= reservation.status %></h5>
+  <h5 class="align-right"><%= reservation.status %></h5>
 </div>
   <% end %>
 </div>
