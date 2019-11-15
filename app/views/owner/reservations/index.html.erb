@@ -3,20 +3,21 @@
   <br>
   <% @reservations.each do |reservation| %>
 
-<div class="card-product">
-  <%= cl_image_tag reservation.flat.photo, height: 100, width: 100, crop: :fill %>
-  <div class="card-product-infos">
-  <h2>Du : <%= reservation.start_date %> au: <%= reservation.end_date %> </h2>
-    <h2> <%= reservation.flat.title %></h2>
-    <p> <%= reservation.flat.address %></p>
-    <h2><%= reservation.price %>€</h2>
-    <h2> <%= reservation.guest.first_name %></h2>
-
-  </div>
-  <%= reservation.status  %>
-
-  <%= link_to "Valider", accept_owner_reservation_path(reservation), method: :patch, class: "btn btn-ghost btn-border-blue float-md-right"%>
-  <%= link_to "Refuser", decline_owner_reservation_path(reservation), method: :patch, class: "btn btn-ghost btn-border-red float-md-left" %>
+  <div class="card-product card-border card-shadow">
+    <%= cl_image_tag reservation.flat.photo, height: 100, width: 100, crop: :fill %>
+    <div class="card-product-infos">
+      <h2 class="title-color"> <%= reservation.flat.title %></h2>
+      <p> <%= reservation.flat.address %></p>
+      <!-- <h2><%= reservation.price %>€</h2> -->
+      <p> Demande envoyée par:</p>
+      <p class="periode"><%= reservation.guest.first_name %> <%= reservation.guest.last_name%></p>
+    </div>
+    <p class="periode flex-styling-short pad-left pad-right">Du<span class="date-style"><%= reservation.start_date.strftime("%d-%m-%y") %></span>  au  <span class="date-style"><%= reservation.end_date.strftime("%d-%m-%y") %></span></p>
+    <p class="align-date status-pad-top"><%= reservation.status %></p>
+    <div class="align-right marg-right pad-left">
+      <%= link_to "Valider", accept_owner_reservation_path(reservation), method: :patch, class: "btn btn-ghost btn-border-blue"%>
+      <%= link_to "Refuser", decline_owner_reservation_path(reservation), method: :patch, class: "btn btn-ghost btn-border-red" %>
+    </div>
   </div>
   <% end %>
 </div>

@@ -80,11 +80,11 @@
   margin-bottom: 20px;
   color: #333533;
 }
-// .card-title {
-//   padding-top: 10px;
-//   text-align: center;
-//   height: 35px;
-// }
+.card-title {
+  padding-top: 10px;
+  text-align: right;
+  height: 35px;
+}
 .card-body {
   position: absolute;
   bottom: 0;
@@ -138,12 +138,45 @@ span.periode {
   letter-spacing: 1px;
   margin: 0 10px;
 }
+.date-owner {
+  display: inline;
+  margin-bottom: 5px;
+}
+.date-status  {
+  display: block;
+  margin-left: auto;
+}
 .text-align-left  {
   text-align: left;
+}
+.text-align-right  {
+  text-align: right;
 }
 .title-color  {
   color: #454545;
 }
 .price-pad-top {
   padding-top: 15px;
+}
+.status-pad-top {
+  padding-top: 10px;
+  widows: 200px;
+}
+.pad-left {
+  padding-left: 80px;
+}
+.pad-right  {
+  padding-right: 60px;
+}
+.display-inline {
+  width: 150px;
+  height: 80px;
+  padding-bottom: 10px;
+  // display: inline-block;
+}
+.align-date  {
+  color: #bbbbbb;
+  margin-left: left;
+  padding-left: 50px;
+  padding-right: 25px;
 }
