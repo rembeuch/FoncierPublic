@@ -96,7 +96,8 @@ h2.card-trip-pricing  {
   font-size: 26px;
   color: #555555;
   font-weight: 300;
-  padding-left: 50px;
+  padding-left: 160px;
+  text-align:right;
   display: inline-block;
 
   &.show-version {
@@ -111,6 +112,15 @@ h2.card-trip-pricing  {
 }
 .card-shadow  {
   box-shadow: 2px 2px 8px #f7f7f7;
+}
+.testing  {
+  display: inline-block;
+  // width: 400px;
+  font-size: 26px;
+  color: #555555;
+  font-weight: 300;
+  text-align: left;
+  padding-left: 10px;
 }
 .card-button-price  {
   padding: 0;
@@ -165,7 +175,10 @@ span.periode {
   padding-left: 80px;
 }
 .pad-right  {
-  padding-right: 60px;
+  padding-right: 10px;
+}
+.pad-bot  {
+  padding-bottom: 20px;
 }
 .display-inline {
   width: 150px;

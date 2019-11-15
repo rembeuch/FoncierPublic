@@ -10,11 +10,10 @@
             <div class="card card-border card-shadow">
               <%= cl_image_tag flat.photo, height: 200, width: 300, crop: :fill%>
               <h5 class="card-newtitle"><%= truncate flat.title, length: 25 %></h5>
+              <h2 class="testing"><%= flat.capacity %><span class="periode"> pers</span></h2>
+              <h2 class="testing"><%= flat.square_meter %><span class="periode"> m2</span></h2>
               <div class="card-body">
                 <div class="card-button-price">
-                  <!-- <p class="card-text">...</p> -->
-                  <h2 class="card-trip-pricing"><%= flat.capacity %><span class="periode">pers</span> <%= flat.square_meter %></h2><span class="periode">m2</span>
-                  <br>
                   <h2 class="card-trip-pricing"><%= flat.price_per_day %></h2><span class="periode"> € / jour</span>
                 </div>
               </div>
