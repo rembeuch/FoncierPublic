@@ -133,7 +133,7 @@ Reservation.create(
 
 resa1 = Reservation.new(
   start_date: Date.today,
-  end_date: Faker::Date.between(from: Date.today, to: 1.year.from_now),
+  end_date: Faker::Date.between(from: Date.today + 1.days, to: 1.month.from_now),
   status: "en attente",
   flat: flat6,
   guest: default_user,
