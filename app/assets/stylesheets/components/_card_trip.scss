@@ -148,6 +148,9 @@ span.periode {
 .text-align-left  {
   text-align: left;
 }
+.text-align-right  {
+  text-align: right;
+}
 .title-color  {
   color: #454545;
 }
@@ -156,6 +159,13 @@ span.periode {
 }
 .status-pad-top {
   padding-top: 10px;
+  widows: 200px;
+}
+.pad-left {
+  padding-left: 80px;
+}
+.pad-right  {
+  padding-right: 60px;
 }
 .display-inline {
   width: 150px;
@@ -165,6 +175,7 @@ span.periode {
 }
 .align-date  {
   color: #bbbbbb;
-  margin-left: auto;
-  // padding-right: 25px;
+  margin-left: left;
+  padding-left: 50px;
+  padding-right: 25px;
 }
